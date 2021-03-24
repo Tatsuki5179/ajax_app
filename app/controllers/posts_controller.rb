@@ -3,8 +3,12 @@ class PostsController < ApplicationController
     @posts = Post.order(id: "DESC")
   end
 
+  # def new
+  # end
+
   def create
-    Post.create(memo: params[:memo])
+    Post.create(content: params[:content])
     redirect_to action: :index 
   end
+
 end
